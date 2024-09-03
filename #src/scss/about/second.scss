@@ -1,0 +1,60 @@
+.about-second {
+   margin-top: 100vh;
+   // .about-second__text
+   position: relative;
+   min-height: 100vh;
+   font-family: "PP Neue Montreal", sans-serif;
+   &__wrapper {
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      h2 {
+         font-size: 14px;
+         font-weight: 500;
+         line-height: 19.6px;
+         letter-spacing: 0.01em;
+         text-align: left;
+         color: rgba(255, 255, 255, 0.4);
+      }
+   }
+   &__text {
+      font-size: 70px;
+      font-weight: 500;
+      line-height: calc(73.5 / 70);
+      color: white;
+      text-transform: uppercase;
+      width: calc(1111 / 1440 * 100vw);
+      .active {
+         opacity: 1;
+      }
+      p,
+      span {
+         display: inline;
+         opacity: 0.1;
+      }
+   }
+   &__bg {
+      position: absolute;
+      inset: 0;
+      background-color: black;
+      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+      &::before {
+         content: "";
+         display: block;
+         width: 100%;
+         height: 200px;
+         background: linear-gradient(to top, black, transparent);
+         position: absolute;
+         bottom: 100%;
+         left: 0;
+         right: 0;
+      }
+   }
+}

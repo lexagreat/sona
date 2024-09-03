@@ -1,0 +1,138 @@
+.about-prefs {
+   // .about-prefs__wrapper
+   position: relative;
+   min-height: 380vh;
+   background-color: black;
+   font-family: "PP Neue Montreal", sans-serif;
+   padding-top: 330px;
+   &__wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 50vh;
+      transform: translate(0, -50%);
+   }
+
+   // .about-prefs__list
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+   }
+}
+.about-circle {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 662px;
+   aspect-ratio: 1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   .big-circle {
+      rotate: -90deg;
+      path {
+         stroke-dasharray: 1000px;
+      }
+   }
+   .border {
+      border-radius: 50%;
+      border: 1px solid white;
+      opacity: 0.3;
+      position: absolute;
+   }
+   span {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+      border: 1px solid rgba(77, 77, 77, 1);
+      background-color: black;
+      z-index: 1;
+      transition: 0.4s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.active {
+         background-color: white;
+         border-color: white;
+         &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: black;
+         }
+      }
+   }
+   .stage1 {
+      top: 0;
+      left: 50%;
+      translate: -50% 1px;
+   }
+   .stage2 {
+      right: 0;
+      top: 50%;
+      translate: 0 -50%;
+   }
+   .stage3 {
+      bottom: 0;
+      left: 50%;
+      translate: -50% 0;
+   }
+   .stage4 {
+      left: 0;
+      top: 50%;
+      translate: 0 -50%;
+   }
+
+   &__content {
+      transition: 0.4s;
+      opacity: 0;
+      color: white;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(353 / 660 * 100%);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      &.active {
+         opacity: 1;
+      }
+   }
+   &__index {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: rgba(255, 255, 255, 0.4);
+   }
+   &__title {
+      text-transform: uppercase;
+      font-size: 47.45px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: calc(26 / 660 * 100%);
+      margin-bottom: calc(74 / 660 * 100%);
+   }
+   &__text {
+      font-size: 20px;
+      line-height: calc(28 / 20);
+      letter-spacing: 0.01em;
+      margin-top: calc(74 / 660 * 100%);
+   }
+}
